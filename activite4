@@ -1,0 +1,67 @@
+import math
+a=0
+b=0
+c=0
+
+def ordre(a,b,c):
+    if a<= b<= c:
+        print(a,b,c,"Dans l'ordre")
+    else:
+        print(a,b,c,"Pas Dans l'ordre")
+
+def existance(a,b,c):
+    if (a+b)>=c:
+        print(a, b, c, "Il y a un triangle")
+    else:
+        print(a, b, c, "Pas de triangle")
+
+def triangleRectangle(a,b,c):
+    A=b*b+c*c
+    B=a*a+c*c
+    C=b*b+c*c
+    if math.sqrt(A)==a:
+        print(a,b,c,"Triangle rectangle en a")
+    elif math.sqrt(B)==b:
+        print(a, b, c, "Triangle rectangle en b")
+    elif math.sqrt(C)==c:
+        print(a, b, c, "Triangle rectangle en c")
+    else:
+        print(a, b, c, "Triangle pas rectangle")
+
+def triangleEquilateral(a,b,c):
+    if a==b==c:
+        print(a,b,c,"Triangle Equilateral")
+    else:
+        print(a,b,c,"Triangle pas Equilateral")
+
+def triangleIsocele(a,b,c):
+    if a==b:
+        print(a, b, c, "Triangle isocele en c")
+    elif a==c:
+        print(a, b, c, "Triangle isocele en b")
+    elif c==b:
+        print(a, b, c, "Triangle isocele en a")
+
+def angleAigu(a,b,c):
+    cosAlpha=(-a*a+b*b+c*c)/(2*b*c)
+    cosBeta=(a*a-b*b+c*c)/(2*a*c)
+    cosCeta=(a*a+b*b-c*c)/(2*a*b)
+    if cosAlpha>=0:
+        print(a,b,c,"Angle aigu en a")
+    elif cosBeta>=0:
+        print(a,b,c,"Angle aigu en b")
+    elif cosCeta>=0:
+        print(a, b, c, "Angle aigu en b")
+    elif cosAlpha>=0 and cosBeta>=0 and cosCeta>=0:
+        print(a, b, c, "Angle aigu en a, b et c")
+    else:
+        print(a,b,c,"Triangle pas aigu")
+for a in [1, 2, 3,4,5,6,http://exo7.emath.fr/cours/livre-python1.pdf7,8,9]:
+    for b in [1, 2, 3,4,5,6,7,8,9]:
+        for c in [1, 2, 3,4,5,6,7,8,9]:
+            ordre(a, b, c)
+            existance(a, b, c)
+            triangleRectangle(a, b, c)
+            triangleEquilateral(a, b, c)
+            triangleIsocele(a, b, c)
+            angleAigu(a,b,c)
